@@ -4,7 +4,7 @@ const stateList = ["AL", "AK", "AZ", "AR", "CA", "CO", "CT", "DE", "DC", "FL", "
 
 const stateChecker = (req, res, next) => {
 
-    const stateAbbr = req.params.code;
+    const stateAbbr = req.params.code.toUpperCase();
 
     if(stateList.indexOf(stateAbbr) == -1){
         console.log(stateAbbr);
