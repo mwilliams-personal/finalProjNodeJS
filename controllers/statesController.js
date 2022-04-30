@@ -91,7 +91,7 @@ const getStatePopulation = async (req, res) => {
 
     const state = data.states.find(state => state.code === stateAbbr);
 
-    return res.json({"state":state.state, "population":state.population});
+    return res.json({"state":state.state, "population":state.population.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")});
 }
 
 const getStateAdmissionDate = async (req, res) => {
