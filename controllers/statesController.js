@@ -61,7 +61,7 @@ const getStateFunfact = async (req, res) => {
     const stateExists = mongoStates.find(State => State.stateCode === state.code);
 
     if (!stateExists) {
-        return res.status(404).json({"message": `No Fun Facts found for ${state.state}.`});
+        return res.json({"message": `No Fun Facts found for ${state.state}.`});
     }
     
     return res.json({"funfact":stateExists.funfacts[[Math.floor(Math.random()*stateExists.funfacts.length)]]});
