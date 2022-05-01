@@ -5,10 +5,7 @@ const statesController = require('../../controllers/statesController');
 const stateChecker = require('../../middleware/stateChecker');
 
 router.route('/')
-    .get(statesController.getAllStates)
-    /*.post(employeesController.createNewEmployee)
-    .put(employeesController.updateEmployee)
-    .delete(employeesController.deleteEmployee)*/;
+    .get(statesController.getAllStates);
 
 router.route('/:code/funfact')
     .get(stateChecker)
