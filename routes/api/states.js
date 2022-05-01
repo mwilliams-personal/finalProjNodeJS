@@ -11,21 +11,33 @@ router.route('/')
     .delete(employeesController.deleteEmployee)*/;
 
 router.route('/:code/funfact')
-    .get(stateChecker).get(stateChecker).get(statesController.getStateFunfact);
+    .get(stateChecker)
+    .get(statesController.getStateFunfact)
+    .post(stateChecker)
+    .post(statesController.createNewFunFact)
+    .patch(stateChecker)
+    .patch(statesController.updateFunFact)
+    .delete(stateChecker)
+    .delete(statesController.deleteFunFact);
 
 router.route('/:code/capital')
-    .get(stateChecker).get(statesController.getStateCapital);
+    .get(stateChecker)
+    .get(statesController.getStateCapital);
 
 router.route('/:code/nickname')
-    .get(stateChecker).get(statesController.getStateNickname);
+    .get(stateChecker)
+    .get(statesController.getStateNickname);
 
 router.route('/:code/population')
-    .get(stateChecker).get(statesController.getStatePopulation);
+    .get(stateChecker)
+    .get(statesController.getStatePopulation);
 
 router.route('/:code/admission')
-    .get(stateChecker).get(statesController.getStateAdmissionDate);
+    .get(stateChecker)
+    .get(statesController.getStateAdmissionDate);
 
 router.route('/:code')
-    .get(stateChecker).get(statesController.getState);
+    .get(stateChecker)
+    .get(statesController.getState);
 
 module.exports = router;
